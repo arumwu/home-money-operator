@@ -13,6 +13,8 @@
 5. 依商家與品項規則分類，寫入家庭帳本。
 6. 更新本月統計，建立到期與異常消費提醒。
 
+完整的申請、授權與無人值守排程步驟，請見 [Gmail 與電子發票全自動化設定](docs/GMAIL_AUTOMATION.md)。文件包含 Google OAuth 申請、Testing 七天限制、財政部寄送設定、私密 Sites 排程授權與故障排查。
+
 另外提供以 Bearer secret 保護的 `/api/inbound-email` adapter，讓非 Gmail 的收件服務也能送入同一條處理管線。
 
 ## 安全邊界
@@ -22,6 +24,7 @@
 - OAuth state 使用 HMAC 且十分鐘失效。
 - 只有家庭 owner 可以新增帳單、連接信箱或手動同步；後加入的成員預設為 viewer。
 - 不把憑證、原始郵件或發票附件提交到 Git。
+- 每個自行部署者必須建立自己的 Google OAuth Client；倉庫不提供共用 Client Secret。
 
 ## 本機開發
 
@@ -55,6 +58,10 @@ https://你的網站/api/gmail/callback
 ```bash
 npm run verify
 ```
+
+## 開源授權
+
+本專案採用 [Apache License 2.0](LICENSE)。公開原始碼不包含任何 Gmail 憑證、家庭資料或電子發票附件。
 
 ## 命名
 

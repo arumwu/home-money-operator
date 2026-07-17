@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-17T17:14:13.264Z",
+  "title": "Design System: 家計值班",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "值班鋼藍",
+        "canonical": "oklch(45% 0.075 244)",
+        "tonalRamp": ["oklch(18% 0.035 244)", "oklch(28% 0.05 244)", "oklch(38% 0.07 244)", "oklch(48% 0.075 244)", "oklch(58% 0.065 244)", "oklch(70% 0.05 244)", "oklch(82% 0.035 244)", "oklch(94% 0.012 244)"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "晨霧底",
+        "canonical": "oklch(95.5% 0.012 244)",
+        "tonalRamp": ["oklch(15% 0.012 244)", "oklch(28% 0.012 244)", "oklch(40% 0.012 244)", "oklch(54% 0.012 244)", "oklch(67% 0.012 244)", "oklch(79% 0.012 244)", "oklch(89% 0.012 244)", "oklch(95.5% 0.012 244)"]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "低彩度鼠尾草",
+        "canonical": "oklch(51% 0.065 160)",
+        "tonalRamp": ["oklch(18% 0.03 160)", "oklch(29% 0.045 160)", "oklch(40% 0.06 160)", "oklch(51% 0.065 160)", "oklch(62% 0.055 160)", "oklch(73% 0.045 160)", "oklch(84% 0.035 160)", "oklch(94% 0.015 160)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "家庭帳本標題",
+        "purpose": "首頁問候與主要區塊標題。"
+      },
+      "body": {
+        "displayName": "繁中介面文字",
+        "purpose": "操作、說明與資料標籤。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-low",
+        "value": "0 3px 8px oklch(25% 0.03 244 / 0.08)",
+        "purpose": "摘要卡與主要按鈕。"
+      },
+      {
+        "name": "modal",
+        "value": "0 24px 64px oklch(18% 0.025 244 / 0.28)",
+        "purpose": "Modal 專用。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-standard",
+        "value": "180ms ease-out",
+        "purpose": "按鈕、連結與狀態變化。"
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "520px" },
+      { "name": "navigation", "value": "820px" },
+      { "name": "compact-desktop", "value": "1150px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "新增帳單與主要提交動作。",
+      "html": "<button class=\"ds-button-primary\">新增帳單</button>",
+      "css": ".ds-button-primary { min-height: 40px; padding: 0 15px; border: 0; border-radius: 7px; background: var(--primary); color: var(--surface-raised); font: 700 12px/1.5 system-ui; transition: transform .18s ease, background .18s ease; } .ds-button-primary:hover { transform: translateY(-1px); } .ds-button-primary:focus-visible { outline: 3px solid oklch(45% 0.075 244 / .22); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "同步與次要操作。",
+      "html": "<button class=\"ds-button-secondary\">同步 Gmail</button>",
+      "css": ".ds-button-secondary { min-height: 40px; padding: 0 15px; border: 1px solid var(--control-line); border-radius: 7px; background: var(--surface); color: var(--primary); font: 700 12px/1.5 system-ui; } .ds-button-secondary:hover { background: var(--primary-soft); } .ds-button-secondary:focus-visible { outline: 3px solid oklch(45% 0.075 244 / .22); outline-offset: 2px; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "帳單、提醒與統計資料容器。",
+      "html": "<section class=\"ds-panel\"><strong>接下來要繳的</strong><p>水費將在 7 天內到期</p></section>",
+      "css": ".ds-panel { border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); padding: 18px 22px; } .ds-panel strong { display: block; margin-bottom: 6px; } .ds-panel p { margin: 0; color: var(--muted); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "帳單名稱與供應商輸入。",
+      "html": "<input class=\"ds-input\" value=\"台北自來水\" aria-label=\"帳單名稱\">",
+      "css": ".ds-input { width: 100%; height: 43px; padding: 0 12px; border: 1px solid var(--control-line); border-radius: 4px; background: var(--surface-raised); color: var(--ink); } .ds-input:focus-visible { border-color: var(--primary); outline: 3px solid oklch(45% 0.075 244 / .14); outline-offset: 0; }"
+    },
+    {
+      "name": "Navigation Item",
+      "kind": "nav",
+      "description": "側欄目前選取項目。",
+      "html": "<a class=\"ds-nav-active\" href=\"#overview\">今日總覽</a>",
+      "css": ".ds-nav-active { display: block; padding: 12px 13px; border-radius: 8px; background: var(--sidebar-active); color: var(--sidebar-ink); font: 650 14px/1.5 system-ui; text-decoration: none; } .ds-nav-active:focus-visible { outline: 2px solid oklch(79% 0.035 235); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "晨霧值班台",
+    "overview": "家計值班像清晨微霧中的家庭工作桌：安靜、有秩序，重要訊息能被看見，但不以刺眼顏色製造焦慮。視覺採低彩度灰藍莫蘭迪色，資訊密度足以支援日常家計工作，同時保留清楚的呼吸空間。",
+    "keyCharacteristics": [
+      "灰藍中性底色與低彩度鋼藍主色",
+      "平面分層、細線分隔與短距離陰影",
+      "一致的語意狀態色與明確文字標籤",
+      "安靜的家庭語氣，不製造消費羞恥"
+    ],
+    "rules": [
+      { "name": "The Ten Percent Rule", "body": "主色只用在主要操作、目前選取與關鍵資料，不把所有標題都染藍。", "section": "colors" },
+      { "name": "The Semantic Color Rule", "body": "綠只代表正常、黃只代表待處理、紅只代表錯誤，而且每次都搭配文字或圖示。", "section": "colors" },
+      { "name": "The Flat-by-Default Rule", "body": "面板預設平面；若邊框已能表達邊界，就不得再加大面積柔焦陰影。", "section": "elevation" }
+    ],
+    "dos": [
+      "Do 使用灰藍中性色面建立層次，再把鋼藍留給操作與選取狀態。",
+      "Do 維持一般文字 4.5:1、互動元件 3:1 以上的對比。",
+      "Do 讓所有狀態同時具有文字、圖示或形狀。"
+    ],
+    "donts": [
+      "Don't 做高飽和亮藍與霓虹漸層的金融科技儀表板。",
+      "Don't 做暖米色、奶油紙張質感的生活風記帳模板。",
+      "Don't 用紅綠顏色單獨判斷好壞，也不要把消費遊戲化或製造羞恥感。",
+      "Don't 堆疊玻璃卡片、超大圓角或無意義的裝飾動畫。"
+    ]
+  }
+}
