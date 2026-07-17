@@ -66,7 +66,7 @@ npm run verify
 ## 命名
 
 - 產品：家計值班 / Home Money Operator
-- Repository：`mars-tw/home-money-operator`
+- Repository：`arumwu/home-money-operator`
 - Package：`@mars-tw/home-money-operator`
 - CLI：`home-money`（保留名稱）
 - MCP server：`home-money`（v1 暫不啟用）
