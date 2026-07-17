@@ -105,7 +105,13 @@ function StatusDot({ tone = "green" }: { tone?: "green" | "amber" | "muted" }) {
   return <span className={`status-dot ${tone}`} aria-hidden="true" />;
 }
 
-export function Dashboard({ initialName }: { initialName: string }) {
+export function Dashboard({
+  initialName,
+  briefingDate,
+}: {
+  initialName: string;
+  briefingDate: string;
+}) {
   const [data, setData] = useState<DashboardData>(() => emptyData(initialName));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -249,7 +255,7 @@ export function Dashboard({ initialName }: { initialName: string }) {
 
           <section id="overview" className="hero-row">
             <div>
-              <span className="section-kicker">HOUSEHOLD BRIEFING · {new Date().toLocaleDateString("zh-TW", { timeZone: "Asia/Taipei", month: "long", day: "numeric", weekday: "long" })}</span>
+              <span className="section-kicker">HOUSEHOLD BRIEFING · {briefingDate}</span>
               <h1>早安，家裡的錢<br/><em>目前都在掌握中。</em></h1>
               <p>該繳的先提醒，花掉的自動記，家裡的錢一眼看清。</p>
             </div>

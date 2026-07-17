@@ -10,6 +10,7 @@ test("builds the household operator dashboard", async () => {
     access(new URL("dist/server/index.js", root)),
   ]);
   assert.match(page, /title: "家計值班｜家庭金錢提醒與自動記帳"/);
+  assert.match(page, /briefingDate=/);
   assert.match(page, /該繳的先提醒，花掉的自動記/);
   assert.match(dashboard, /從財政部寄信，到家庭帳本/);
   assert.match(dashboard, /Gmail OAuth/);
